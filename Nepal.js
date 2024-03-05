@@ -17,7 +17,7 @@ fs.readFile(path, 'utf8', (err, file) => {
   try {
     const data = JSON.parse(file)
     const pastdate=data[0].English;
-    if(day > pastdate){ 
+    if(day - pastdate!= 0){ 
         axios.get(url)
                 .then(response => {
                     const fetchedHTMLContent = response.data;
